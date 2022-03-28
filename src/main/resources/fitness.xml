@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+
+    <bean id="fitnessTeacher" class="com.springprojects.inversioncontrol.DanceFitness">
+        <constructor-arg ref="moneyManagement"/>
+        <property name="moneyManagement" ref="moneyManagement" />
+    </bean>
+
+    <bean id="moneyManagement" class="com.springprojects.inversioncontrol.RetrieveMoney"  >
+
+    </bean>
+
+    <bean id="areobicTeacher" class="com.springprojects.inversioncontrol.Areobics">
+        <property name="emailAddress" value="benbasty@yahoo.fr" />
+        <property name="team" value="ABCTeam" />
+    </bean>
+
+</beans>
